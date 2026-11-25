@@ -1,0 +1,19 @@
+include ../../data/works
+
+section#works.works.section
+  .container
+    each cat in filterCategories
+      input.filter-input(type='radio', name='filter', id=cat.id, checked=cat.checked)
+
+    h2.title OUR AWESOME WORKS
+
+    .filter-chips
+      each cat in filterCategories
+        label.chip(for=cat.id, class=`chip-${cat.value}`)= cat.label
+
+    .works-grid
+      each work in works
+        +work-card(work)
+
+    .center-btn
+      +btn('LOAD MORE WORKS', null, 'outline').btn-block-mobile

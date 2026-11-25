@@ -1,0 +1,151 @@
+@use '../abstracts' as *;
+
+.filter-input {
+  display: none;
+}
+
+.filter-chips {
+  display: flex;
+  gap: rem(8);
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: rem(24);
+}
+
+.chip {
+  font-family: $font-heading;
+  font-size: rem(12);
+  letter-spacing: 1px;
+  padding: rem(6) rem(14);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-dark);
+  cursor: pointer;
+}
+
+.works-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(12);
+
+  @include mq(xl) {
+    gap: rem(14);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8);
+  opacity: 0;
+
+  h3 {
+    font-family: $font-heading;
+    font-size: rem(14);
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  p {
+    font-size: rem(12);
+    color: var(--color-muted);
+  }
+}
+
+.card {
+  width: 100%;
+
+  @include mq(md) {
+    width: calc(50% - #{rem(6)});
+  }
+
+  @include mq(xl) {
+    width: calc(33.333% - #{rem(10)});
+  }
+
+  &:nth-child(n + 6) {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &:nth-child(n + 9) {
+    @include mq(md) {
+      display: none;
+    }
+
+    @include mq(xl) {
+      display: block;
+    }
+  }
+
+  &:hover .overlay,
+  &:focus-within .overlay {
+    opacity: 1;
+  }
+}
+
+.f-all:checked ~ .filter-chips .chip-all,
+.f-branding:checked ~ .filter-chips .chip-branding,
+.f-identity:checked ~ .filter-chips .chip-identity,
+.f-print:checked ~ .filter-chips .chip-print,
+.f-web:checked ~ .filter-chips .chip-web,
+.f-motion:checked ~ .filter-chips .chip-motion {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.f-branding:checked ~ .works-grid .card:not([data-category='branding']),
+.f-identity:checked ~ .works-grid .card:not([data-category='identity']),
+.f-print:checked ~ .works-grid .card:not([data-category='print']),
+.f-web:checked ~ .works-grid .card:not([data-category='web']),
+.f-motion:checked ~ .works-grid .card:not([data-category='motion']) {
+  display: none;
+}
+
+.card-img {
+  width: 100%;
+  height: rem(200);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg-light);
+
+  @include mq(md) {
+    height: rem(220);
+  }
+}
+
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.plus {
+  width: rem(36);
+  height: rem(36);
+  border-radius: 50%;
+  background-color: var(--color-teal);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(20);
+}
+
+.line {
+  width: rem(20);
+  height: rem(2);
+  background-color: var(--color-accent);
+}

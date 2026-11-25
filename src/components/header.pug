@@ -1,0 +1,34 @@
+include ../data/navigation
+include ../data/footer
+
+header.header
+  .container.header-wrap
+    a.logo(href='#top')
+      span.logo-badge K
+      | eepsake
+
+    input#burger-check.burger-check(type='checkbox')
+    label.burger-btn(for='burger-check', aria-label='Toggle menu')
+      span.icon-open ☰
+      span.icon-close ✕
+
+    nav.nav
+      ul.nav-list
+        each item in navItems
+          li
+            a(href=item.href, class={ active: item.active })= item.label
+
+      .nav-mobile-btns
+        +btn('Contact us', '#contact', 'red', true)
+        +btn('Favourites', null, 'outline', true)
+
+      .nav-mobile-info
+        p.sub-label SAY HELLO
+        p hello@keepsake.studio
+        p +44 20 7946 0000
+        .mini-socials
+          each soc in socials
+            a(href='#', aria-label=soc)
+              +icon(soc, 16)
+
+      button.fav-icon-btn(type='button', aria-label='Favourites') ♥

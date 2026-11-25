@@ -1,0 +1,32 @@
+footer#contact.footer
+  .container
+    .footer-top
+      .footer-subscribe
+        p.f-heading NEWSLETTER
+        p Subscribe to get our latest news and insights delivered to your inbox.
+        form.f-form(action='#', method='POST')
+          .form-row
+            input.email-input(type='email', placeholder='Your email address', required)
+            +btn('Submit', null, 'red')(type='submit')
+          label.check-label
+            input(type='checkbox', required)
+            |
+            | I agree to the terms and privacy policy
+
+      .footer-links-wrap
+        each col in footerColumns
+          .f-col
+            p.f-heading= col.heading
+            ul
+              each link in col.links
+                li
+                  a(href=link.href)= link.label
+
+    .footer-bottom
+      p © Keepsake Studio. All rights reserved.
+      .soc-links
+        each soc in socials
+          a(href='#', aria-label=soc)
+            +icon(soc, 18)
+
+a.to-top-btn(href='#top', aria-label='Up') ↑

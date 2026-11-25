@@ -1,0 +1,130 @@
+/* stylelint-disable no-descending-specificity */
+@use '../abstracts' as *;
+
+.footer {
+  background-color: var(--color-footer);
+  color: var(--color-muted);
+  padding: rem(40) 0 rem(20);
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  margin-bottom: rem(30);
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-subscribe {
+  @include mq(md) {
+    max-width: rem(360);
+  }
+}
+
+.f-heading {
+  font-family: $font-heading;
+  font-size: rem(13);
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: rem(12);
+}
+
+.f-form {
+  margin-top: rem(12);
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.email-input {
+  padding: rem(10);
+  border: 1px solid #404044;
+  background-color: #353538;
+  color: #fff;
+
+  &:focus {
+    border-color: var(--color-teal);
+    outline: none;
+  }
+}
+
+.check-label {
+  font-size: rem(12);
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+}
+
+.footer-links-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(20);
+
+  a:hover {
+    color: #fff;
+  }
+}
+
+.f-col {
+  width: calc(50% - #{rem(10)});
+}
+
+.footer-bottom {
+  border-top: 1px solid #3a3a3d;
+  padding-top: rem(20);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  align-items: center;
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.soc-links {
+  display: flex;
+  gap: rem(8);
+
+  a {
+    width: rem(30);
+    height: rem(30);
+    border-radius: 50%;
+    background-color: #38383c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.to-top-btn {
+  position: fixed;
+  bottom: rem(20);
+  right: rem(20);
+  width: rem(44);
+  height: rem(44);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(20);
+}

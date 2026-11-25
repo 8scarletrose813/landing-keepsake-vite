@@ -1,0 +1,14 @@
+include ../../data/services
+
+section.services.section
+  .container
+    h2.title WHAT DO WE DO
+    p.section-sub We are a small team of designers and makers dedicated to building beautiful web design products.
+
+    .services-grid
+      each item in services
+        article.service-item
+          .service-icon
+            +icon(item.icon, 32)
+          h3= item.title
+          p= item.text

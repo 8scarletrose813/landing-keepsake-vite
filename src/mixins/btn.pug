@@ -1,0 +1,10 @@
+mixin btn(text, href, modifier, isBlock)
+  -
+    const classes = ['btn']
+    if (modifier) classes.push(`btn-${modifier}`)
+    if (isBlock) classes.push('btn-block')
+
+  if href
+    a(href=href, class=classes)&attributes(attributes)= text
+  else
+    button(type='button', class=classes)&attributes(attributes)= text

@@ -1,0 +1,15 @@
+section#journal.journal.section
+  .container
+    h2.title FROM THE JOURNAL
+    p.section-sub Articles, stories, and insights from our team.
+
+    .journal-grid
+      each post in journalPosts
+        article.journal-card
+          .j-img
+            +picture(post.image, post.alt, 800, 500, 'j-photo')
+          .j-body
+            span.meta= post.date
+            h3= post.title
+            p= post.text
+            a.read-more(href='#') Read more

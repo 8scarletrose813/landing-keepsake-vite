@@ -1,0 +1,34 @@
+extends ../layouts/main
+
+block append meta
+  meta(
+    name='description',
+    content='Keepsake — Digital & Branding Agency specializing in web design, poster, motion video, based in London.'
+  )
+  meta(property='og:title', content='Keepsake — Digital & Branding Agency')
+  meta(property='og:description', content='We love to turn ideas into beautiful things.')
+
+block title
+  title Keepsake — Digital & Branding Agency
+
+block prepend styles
+  link(rel='preconnect', href='https://fonts.googleapis.com')
+  link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+  link(
+    href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap',
+    rel='stylesheet'
+  )
+
+block content
+  include ../components/header
+
+  main#main-content
+    include ../components/sections/hero
+    include ../components/sections/works
+    include ../components/sections/cta
+    include ../components/sections/services
+    include ../components/sections/stats
+    include ../components/sections/clients
+    include ../components/sections/journal
+
+  include ../components/footer

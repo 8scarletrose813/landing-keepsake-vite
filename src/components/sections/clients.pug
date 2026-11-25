@@ -1,0 +1,23 @@
+include ../../data/journal
+
+section.clients.section
+  .container
+    h2.title CLIENTS & KIND WORDS
+    p.section-sub Some of the clients we've worked with along the years.
+
+    .logos-grid
+      each logo in clients
+        span= logo
+
+    article.quote-box
+      span.marks “
+      p.quote-text Keepsake helped us give shape to a brand we are proud of. The team was fast, honest, full of great ideas and obsessed with the details.
+      .author
+        .avatar CA
+        div
+          h4 CODY ANDREWS
+          p Co-Founder, Lead Design
+      .dots
+        span.active
+        span
+        span

@@ -1,0 +1,14 @@
+include ../mixins/index
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    block meta
+    block title
+      title Keepsake
+    block styles
+      link(rel='stylesheet', href='/src/styles/main.scss')
+  body
+    block content

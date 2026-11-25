@@ -1,0 +1,11 @@
+mixin work-card(work)
+  article.card(data-category=work.category, tabindex='0')
+    .card-img
+      +picture(work.image, work.alt, 800, 632, 'card-photo')
+      .overlay
+        span.plus +
+        h3= work.title
+        span.line
+        p= work.categoryLabel
+        if block
+          block
