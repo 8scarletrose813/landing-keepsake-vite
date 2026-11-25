@@ -1,0 +1,21 @@
+# Залежності та збірка
+node_modules/
+dist/
+dist-ssr/
+
+# Локальні змінні оточення
+.env
+.env.*
+!.env.example
+
+# Редактори та ОС
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Логи та кеш
+*.log
+npm-debug.log*
+.stylelintcache
