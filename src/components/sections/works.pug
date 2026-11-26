@@ -3,7 +3,7 @@ include ../../data/works
 section#works.works.section
   .container
     each cat in filterCategories
-      input.filter-input(type='radio', name='filter', id=cat.id, checked=cat.checked)
+      input.filter-input(type='radio', name='filter', id=cat.id, class=cat.id, checked=cat.checked)
 
     h2.title OUR AWESOME WORKS
 
